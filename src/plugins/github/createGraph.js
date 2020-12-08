@@ -3,7 +3,10 @@
 import * as NullUtil from "../../util/null";
 import {Graph} from "../../core/graph";
 import {type WeightedGraph} from "../../core/weightedGraph";
-import {type Weights, empty as emptyWeights} from "../../core/weights";
+import {
+  type Weights as WeightsT,
+  empty as emptyWeights,
+} from "../../core/weights";
 import * as GitNode from "../git/nodes";
 import * as N from "./nodes";
 import * as R from "./relationalView";
@@ -18,7 +21,7 @@ export function createGraph(view: R.RelationalView): WeightedGraph {
 
 class GraphCreator {
   graph: Graph;
-  weights: Weights;
+  weights: WeightsT;
 
   constructor() {
     this.graph = new Graph();
